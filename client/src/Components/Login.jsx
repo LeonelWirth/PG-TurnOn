@@ -37,36 +37,11 @@ function Login2() {
             ) {
               errores.usuario =
                 "El mail solo puedo contener letras, numeros, puntos, guiones, y guion bajo.";
-            } else if (valores.usuario) {
-              let arrmap = array.map((e) => e.usuario);
-              if (valores.usuario.includes(arrmap)) {
-                console.log("usuario valido");
-              } else {
-                errores.usuario = "ptm";
-              }
             }
             if (!valores.password) {
-              errores.password = "Por favor ingrese bien el password";
-            } else if (valores.password) {
-              for (let key of array) {
-                if (key.password === valores.password) {
-                  errores.password = "El password existe";
-                }
-              }
+              errores.password = "Por favor ingrese el password";
             }
-            if (valores.usuario && valores.password) {
-              for (let key of array) {
-                if (
-                  key.usuario === valores.usuario &&
-                  key.password === valores.password
-                ) {
-                  console.log("user y pass validos");
-                } else {
-                  errores.usuario = "el usuario ya existe con esa password";
-                  errores.password = "el password ya existe con ese usuario";
-                }
-              }
-            }
+
             return errores;
           }}
           onSubmit={(valores, { resetForm }) => {
@@ -76,7 +51,7 @@ function Login2() {
             console.log(array);
             setFormEnviado(true);
             // setTimeout(() => setFormEnviado(false), 5000);
-            setTimeout(() => history.push("/login"), 500);
+            setTimeout(() => history.push("/registro"), 500);
           }}
         >
           {({
@@ -133,7 +108,7 @@ function Login2() {
                 <button className="boton" type="submit">
                   Login
                 </button>
-                {formEnviado && <p>Formulario enviado con exito!</p>}
+                {/* {formEnviado && <p>Formulario enviado con exito!</p>} */}
               </div>
               {console.log(array)}
             </form>
