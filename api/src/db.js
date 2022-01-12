@@ -39,7 +39,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Comments, Statistics, Payments, Supplier, Field, Available, Favorites, Bookings } = sequelize.models;
+const { User, Comments, Contact, Statistics, Payments, Supplier, Field, Available, Favorites, Bookings } = sequelize.models;
 
 /* const User = UserModel(sequelize);
 const Proveedor = ProveedorModel(sequelize);
@@ -77,7 +77,7 @@ Favorites.belongsTo(User) // coloca userId en favorites
 
 Comments.belongsTo(Field) // coloca fieldId en comments
 
-//Field.hasMany(Comments, {foreignKey})
+
 
 module.exports = {
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');
@@ -90,4 +90,5 @@ module.exports = {
   Field,
   Favorites,
   Bookings,
+  Contact,
 };

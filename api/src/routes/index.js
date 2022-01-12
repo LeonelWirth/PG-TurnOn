@@ -10,6 +10,7 @@ const supplierCourt = require ("./supplier/court")
 const supplierAvailability = require ("./supplier/availability")
 const supplierPayments = require ("./supplier/payments")
 const supplier = require ("./supplier/supplier")
+const supplierContact = require ("./supplier/contact")
 
 
 router.use("/", userCourt ) 
@@ -21,6 +22,7 @@ router.use ("/", supplierAvailability)
 router.use ("/", supplierCourt)
 router.use ("/" , supplierPayments )
 router.use ("/", supplier)
+router.use ("/", supplierContact)
 
 
 
