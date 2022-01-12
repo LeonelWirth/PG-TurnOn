@@ -25,3 +25,4 @@ conn.sync({ force: false }).then(() => {
     console.log(`El servidor esta escuchando el puerto ${PORT}`);
   });
 });
+
